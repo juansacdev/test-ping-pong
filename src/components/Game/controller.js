@@ -12,6 +12,7 @@ const newGame = async (req, res) => {
 
 	if (!namePlayerOne || !namePlayerTwo) {
 		res.redirect('/')
+		return
 	}
 
 	const userOneData = {

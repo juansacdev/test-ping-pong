@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "nodemon -e hbs,js,css src/index.js",
     "start": "NODE_ENV=production node src/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "keywords": [],
   "author": "Juan Sebastián Agudelo @juansacok <juansac.me@gmail.com>",
@@ -23,6 +23,7 @@
   },
   "devDependencies": {
     "eslint": "7.28.0",
+    "jest": "^27.0.4",
     "nodemon": "2.0.7"
   }
 }
