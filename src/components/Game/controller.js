@@ -10,6 +10,10 @@ const {
 const newGame = async (req, res) => {
 	const { namePlayerOne, namePlayerTwo } = req.body
 
+	if (!namePlayerOne || !namePlayerTwo) {
+		res.redirect('/')
+	}
+
 	const userOneData = {
 		name: namePlayerOne,
 		numberPlayer: 1,

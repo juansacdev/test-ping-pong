@@ -64,6 +64,8 @@ btnSaveGame?.addEventListener('click', async () => {
 		body: JSON.stringify(dataToSavePlayers)
 	})
 
+	alert('Saved successfuly')
+
 })
 
 const setPointsDif = (scorePlayerOne, scorePlayerTwo) => {
