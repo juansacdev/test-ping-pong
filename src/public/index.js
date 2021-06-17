@@ -48,7 +48,7 @@ btnSaveGame?.addEventListener('click', async () => {
 		score: scorePlayerTwoNumber ?? 0,
 	}]
 
-	await fetch('http://localhost:3000/save-game', {
+	await fetch('https://arvolution-test.herokuapp.com/save-game', {
 		method: 'POST',
 		headers: {
 			'Content-Type': 'application/json'
@@ -56,7 +56,7 @@ btnSaveGame?.addEventListener('click', async () => {
 		body: JSON.stringify(dataToSaveGame)
 	})
 
-	await fetch('http://localhost:3000/save-points-user', {
+	await fetch('https://arvolution-test.herokuapp.com/save-points-user', {
 		method: 'POST',
 		headers: {
 			'Content-Type': 'application/json'

@@ -1,4 +1,5 @@
 const express = require('express')
+const cors = require('cors')
 const Handlebars = require('handlebars')
 const { allowInsecurePrototypeAccess } = require('@handlebars/allow-prototype-access')
 const hbs = require('express-handlebars')
@@ -25,6 +26,12 @@ if (dev) {
 	const morgan = require('morgan')
 	app.use(morgan('dev'))
 }
+app.use(cors({
+	origin: '*',
+	preflightContinue: false,
+	optionsSuccessStatus: 204,
+	methods: ['GET', 'POST'],
+}))
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 app.use(express.static(path.join(__dirname, 'public')))
