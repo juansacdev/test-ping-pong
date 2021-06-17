@@ -9,7 +9,7 @@ const { connect } = require('mongoose')
 			useFindAndModify: false,
 			useCreateIndex: true,
 		})
-		console.log(`Database: '${db.connection.name}' has been connected successfully!`)
+		console.log(`Database: '${db.connection.name}' has been connected successfuly!`)
 
 	} catch (error) {
 		console.error(error)

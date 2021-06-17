@@ -12,28 +12,31 @@
             </thead>
             <tbody>
                 {{#if games}}
-                    {{#games}}
-                        <tr class="table-primary">
-                            <th scope="row">
-                                {{#players}}
-                                    <li>{{name}}</li>
-                                {{/players}}
-                            </th>
-                            <td class="points-column">
-                                {{#players}}
-                                    <p>{{wins}}</p>
-                                {{/players}}
-                            </td>
-                            <td>
-                                {{#winner}}
-                                    <p>{{name}}</p>
-                                {{/winner}}
-                            </td>
-                            <td>{{point_diference}}</td>
-                        </tr>
-                    {{/games}}
+                {{#games}}
+                <tr class="table-primary">
+                    <th scope="row">
+                        {{#players}}
+                        <li>{{name}}</li>
+                        {{/players}}
+                    </th>
+                    <td class="points-column">
+                        {{#players}}
+                        <p>{{wins}}</p>
+                        {{/players}}
+                    </td>
+                    <td>
+                        {{#winner}}
+                        <p>{{name}}</p>
+                        {{/winner}}
+                    </td>
+                    <td>{{point_diference}}</td>
+                </tr>
+                {{/games}}
                 {{/if }}
             </tbody>
         </table>
+        <a href="/" class="btn btn-outline-success btn-block">
+            New Game
+        </a>
     </div>
 </div>

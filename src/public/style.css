@@ -26,6 +26,7 @@ label {
 .btn-container {
     display: flex;
     justify-content: space-evenly;
+    margin-bottom: 15px;
 }
 
 .info-players, .container-data-winner  {
@@ -40,6 +41,7 @@ label {
 
 .container-data-winner {
     grid-template-columns: 1fr 1fr ;
+    margin-bottom: 15px;
 }
 
 .name-player-1, .name-player-2 {
