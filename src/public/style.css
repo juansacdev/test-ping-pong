@@ -1,0 +1,59 @@
+body {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 100vh;
+    align-items: center;
+    justify-items: center;
+}
+
+h1, #current-winner, #win-dif,
+.wins, .titles-columns {
+    text-align: center;
+}
+
+.card-header > h3 {
+    text-align: center;
+}
+
+input::placeholder {
+    text-align: center;
+}
+
+label {
+    display: block;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.info-players, .container-data-winner  {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+}
+
+.info-players{
+    padding: 5px;
+}
+
+.container-data-winner {
+    grid-template-columns: 1fr 1fr ;
+}
+
+.name-player-1, .name-player-2 {
+    align-self: center;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.points-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

@@ -1,0 +1,39 @@
+<div class="offset-md-4">
+    <div class="card-header">
+        <h3>High Scores</h3>
+        <table class="table table-hover">
+            <thead>
+                <tr class="titles-columns">
+                    <th scope="col">Players</th>
+                    <th scope="col">Points</th>
+                    <th scope="col">Winner</th>
+                    <th scope="col">Point diference</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#if games}}
+                    {{#games}}
+                        <tr class="table-primary">
+                            <th scope="row">
+                                {{#players}}
+                                    <li>{{name}}</li>
+                                {{/players}}
+                            </th>
+                            <td class="points-column">
+                                {{#players}}
+                                    <p>{{wins}}</p>
+                                {{/players}}
+                            </td>
+                            <td>
+                                {{#winner}}
+                                    <p>{{name}}</p>
+                                {{/winner}}
+                            </td>
+                            <td>{{point_diference}}</td>
+                        </tr>
+                    {{/games}}
+                {{/if }}
+            </tbody>
+        </table>
+    </div>
+</div>

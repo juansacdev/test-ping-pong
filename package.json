@@ -4,15 +4,18 @@
   "description": "",
   "main": "src/index.js",
   "scripts": {
-    "dev": "nodemon src/index",
+    "dev": "nodemon -e hbs,js,css src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "Juan Sebastián Agudelo @juansacok <juansac.me@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "@handlebars/allow-prototype-access": "^1.0.5",
     "dotenv": "10.0.0",
     "express": "4.17.1",
+    "express-handlebars": "^5.3.2",
+    "handlebars": "^4.7.7",
     "mongoose": "5.12.14",
     "morgan": "^1.10.0"
   },
