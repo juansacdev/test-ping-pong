@@ -36,7 +36,7 @@ const newGame = async (req, res) => {
 const saveGame = async (req, res) => {
 	const data = req.body
 	await saveGameData(data)
-	res.send('')
+	res.status(201).send('OK')
 }
 
 const dashboard = async (_req, res) => {

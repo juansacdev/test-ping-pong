@@ -11,9 +11,12 @@ const savePointsOfUser = async (req, res) => {
 	const playerOne = data[0]
 	const playerTwo = data[1]
 
-	await savePoints(playerOne)
-	await savePoints(playerTwo)
-	res.send('')
+	await Promise.all([
+		savePoints(playerOne),
+		savePoints(playerTwo),
+	])
+
+	res.status(202).send('OK')
 }
 
 
