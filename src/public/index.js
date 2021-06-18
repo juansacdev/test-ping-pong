@@ -6,6 +6,7 @@ const scorePlayerTwoLabel = document.getElementById('wins-player-2')
 const currentWinner = document.getElementById('current-winner')
 const btnSaveGame = document.getElementById('saveGame')
 const winDif = document.getElementById('win-dif')
+const labelMsg = document.querySelector('.card-body')
 let scorePlayerOneNumber
 let scorePlayerTwoNumber
 let dif
@@ -43,12 +44,12 @@ btnSaveGame?.addEventListener('click', async () => {
 	const dataToSavePlayers = [{
 		playerId: playersId[0],
 		score: scorePlayerOneNumber ?? 0,
-	},{
+	}, {
 		playerId: playersId[1],
 		score: scorePlayerTwoNumber ?? 0,
 	}]
 
-	await fetch('https://arvolution-test.herokuapp.com/save-game', {
+	const responseSaveGame = await fetch('https://arvolution-test.herokuapp.com/save-game', {
 		method: 'POST',
 		headers: {
 			'Content-Type': 'application/json'
@@ -56,7 +57,7 @@ btnSaveGame?.addEventListener('click', async () => {
 		body: JSON.stringify(dataToSaveGame)
 	})
 
-	await fetch('https://arvolution-test.herokuapp.com/save-points-user', {
+	const responseSaveDataUsers = await fetch('https://arvolution-test.herokuapp.com/save-points-user', {
 		method: 'POST',
 		headers: {
 			'Content-Type': 'application/json'
@@ -64,8 +65,26 @@ btnSaveGame?.addEventListener('click', async () => {
 		body: JSON.stringify(dataToSavePlayers)
 	})
 
-	alert('Saved successfuly')
-
+	if (responseSaveGame.ok && responseSaveDataUsers.ok) {
+		labelMsg.innerHTML = `
+			<div class="alert alert-dismissible alert-success">
+				<strong>Well done!</strong> You have successfully saved the data.</br>
+				Now you can go to  <a href="/dashboard" class="alert-link">dashboard</a> or you can create a <a href="/" class="alert-link">new game</a>
+			</div>
+		`
+		btns.forEach(btn => {
+			btn.setAttribute('disabled', true)
+			btn.classList.replace('btn-outline-success', 'btn-secondary')
+		})
+		btnSaveGame.setAttribute('disabled', true)
+		btnSaveGame.classList.replace('btn-success', 'btn-secondary')
+	} else {
+		labelMsg.innerHTML = `
+			<div class="alert alert-dismissible alert-danger">
+				<strong>Ooops!</strong> something was wrong.Try submitting again.
+			</div>
+		`
+	}
 })
 
 const setPointsDif = (scorePlayerOne, scorePlayerTwo) => {
