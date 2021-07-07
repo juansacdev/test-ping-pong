@@ -67,9 +67,9 @@ btnSaveGame?.addEventListener('click', async () => {
 
 	if (responseSaveGame.ok && responseSaveDataUsers.ok) {
 		labelMsg.innerHTML = `
-			<div class="alert alert-dismissible alert-success">
+			<div class='alert alert-dismissible alert-success'>
 				<strong>Well done!</strong> You have successfully saved the data.</br>
-				Now you can go to  <a href="/dashboard" class="alert-link">dashboard</a> or you can create a <a href="/" class="alert-link">new game</a>
+				Now you can go to  <a href='/dashboard' class='alert-link'>dashboard</a> or you can create a <a href='/' class='alert-link'>new game</a>
 			</div>
 		`
 		btns.forEach(btn => {
@@ -80,7 +80,7 @@ btnSaveGame?.addEventListener('click', async () => {
 		btnSaveGame.classList.replace('btn-success', 'btn-secondary')
 	} else {
 		labelMsg.innerHTML = `
-			<div class="alert alert-dismissible alert-danger">
+			<div class='alert alert-dismissible alert-danger'>
 				<strong>Ooops!</strong> something was wrong.Try submitting again.
 			</div>
 		`
