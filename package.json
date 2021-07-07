@@ -1,7 +1,7 @@
 {
   "name": "arvolution-test",
   "version": "1.0.0",
-  "description": "",
+  "description": "A simple tracker for a Ping Pong game",
   "main": "src/index.js",
   "scripts": {
     "dev": "nodemon -e hbs,js,css src/index.js",
@@ -9,7 +9,7 @@
     "test": "jest",
     "test:watch":"jest --watchAll"
   },
-  "keywords": [],
+  "keywords": ['javascript', 'hbs', 'mongodb', 'express'],
   "author": "Juan Sebastián Agudelo @juansacok <juansac.me@gmail.com>",
   "license": "MIT",
   "dependencies": {
